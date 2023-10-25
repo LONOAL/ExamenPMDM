@@ -21,18 +21,18 @@ fun IU(miViewModel: MyViewModel) {
 
     Column {
 
-        if ( miViewModel.name.length > 3) {
+        if ( miViewModel.data.name.length > 3) {
             Text(
-                text = "Nombre: ${ miViewModel.name}!",
+                text = "Nombre: ${ miViewModel.data.name}!",
                 fontSize = 24.sp,
 
                 )
             Modifier.padding(18.dp)
         }
         OutlinedTextField(
-            value = miViewModel.name,
+            value = miViewModel.data.name,
             onValueChange = {
-                miViewModel.name = it
+                miViewModel.data.name = it
             },
             label = { Text(text = "Name") }
         )
