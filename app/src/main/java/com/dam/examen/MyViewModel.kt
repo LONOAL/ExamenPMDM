@@ -7,16 +7,22 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 
 class MyViewModel : ViewModel() {
-    var data by mutableStateOf(RandomData())
+
+    val data = RandomData()
 
     fun funcionRandom() {
-        data.num = (0..3).random()
-        data.numList.add(data.num)
+        data.num.value = (0..3).random()
+        data.numList.add(data.num.value)
         Log.d("Tag", "Estoy en el random")
     }
 
+
     fun getNumero(): Int {
-        return data.num
+        return data.num.value
+    }
+
+    fun getName(): String {
+        return data.name.value
     }
 
     fun getLista(): List<Int> {

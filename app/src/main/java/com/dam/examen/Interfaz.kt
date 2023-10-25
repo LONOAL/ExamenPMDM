@@ -21,18 +21,19 @@ fun IU(miViewModel: MyViewModel) {
 
     Column {
 
-        if ( miViewModel.data.name.length > 3) {
+        if ( miViewModel.getName().length > 3) {
             Text(
-                text = "Nombre: ${ miViewModel.data.name}!",
+                text = "Nombre: ${ miViewModel.data.name.value}!",
                 fontSize = 24.sp,
 
                 )
             Modifier.padding(18.dp)
         }
         OutlinedTextField(
-            value = miViewModel.data.name,
+            value = miViewModel.data.name.value,
             onValueChange = {
-                miViewModel.data.name = it
+                miViewModel.data.name.value = it
+
             },
             label = { Text(text = "Name") }
         )
@@ -51,6 +52,7 @@ fun IU(miViewModel: MyViewModel) {
             onClick = {
                 miViewModel.funcionRandom()
                 Log.d("Tag", "Estoy en Onclick")
+
             },
             modifier = Modifier.padding(64.dp)
 
