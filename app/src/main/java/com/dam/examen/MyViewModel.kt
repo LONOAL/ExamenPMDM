@@ -8,23 +8,10 @@ import androidx.lifecycle.ViewModel
 
 class MyViewModel : ViewModel() {
     var num by mutableStateOf(0)
-    var name by mutableStateOf("")
-    val numList = mutableListOf<Int>()
-
-
-    fun funcionRandom() {
-
-        num = (0..3).random()
-        numList.add(num)
-
-        Log.d("Tag", "Estoy en el random")
-    }
-
-
+    var text by mutableStateOf("START")
+    var fontSize by mutableStateOf(24)
     fun getNumero(): Int {
         return num
     }
-    fun getLista():List<Int>{
-        return numList
-    }
+
 }
